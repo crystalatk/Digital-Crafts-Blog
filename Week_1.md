@@ -155,6 +155,35 @@ if i <11:
     print(f"Welcome, {user_name}! So glad you could make it!")
 ```
 
+Fun tip! Put the try in a while True and break the while true loop when the try works!
+
+Example:
+
+```python
+while True:
+    try:
+        bill = float(input("How much was your total bill?\n$ "))
+        break
+    except ValueError:
+        print("Your bill should be a number.")
+service = input("How was your serivce today?\nPlease choose: Good, Fair, or Bad\n")
+service_u = service.upper()
+if service_u == "GOOD":
+    tip_multiplier = .2
+elif service_u == "FAIR":
+    tip_multiplier = .15
+elif service_u == "BAD":
+    tip_multiplier = .1
+else:
+    print("Please choose the level of service using the terms: Good, Fair, or Bad.\nThanks!")
+    exit()
+tip_f = bill * tip_multiplier
+tip = "${:,.2f}".format(tip_f)
+total = "${:,.2f}".format(bill + tip_f)
+print(f"Tip amount: {tip}")
+print(f"Total Amount: {total}")
+```
+
 
 ## **Errors** 
 Common Errors
